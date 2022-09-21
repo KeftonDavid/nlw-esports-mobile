@@ -20,9 +20,10 @@ export function Home() {
     navigation.navigate('game', {id, title, bannerUrl});
   }
 
+  const ip = '?'
 
   useEffect(() => {
-    fetch('http://192.168.0.6:3333/games')
+    fetch(`http://${ip}:3333/games`)
     .then(res => res.json())
     .then(data => setGames(data))
   }, [])
